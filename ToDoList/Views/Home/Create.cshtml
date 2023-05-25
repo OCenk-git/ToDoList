@@ -1,0 +1,27 @@
+﻿@model ToDo
+
+<form asp-action="Create" >
+	<table>
+		<tr>
+			<td>
+				<label asp-for="Beschreibung"></label>
+			</td>
+			<td>
+				<input asp-for="Beschreibung" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label asp-for="EndDatum"></label>
+			</td>
+			<td>
+				<input asp-for="EndDatum" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Erstellen" />
+			</td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ToDo>
+
+<table>
+	<tr>
+		<th>
+			Beschreibung
+		</th>
+		<th>
+			Zieldatum
+		</th>
+		<th>
+			Erledigt
+		</th>
+		<th>
+			Bearbeiten
+		</th>
+		<th>
+			Löschen
+		</th>
+	</tr>
+	@foreach(var item in Model)
+	{
+		<tr>
+			<td>
+				@item.Beschreibung
+			</td>
+			<td>
+				@item.EndDatum
+			</td>
+			<td>
+				@item.Erledigt
+			</td>
+			<td>
+				<a asp-action="Edit" asp-route-Id="@item.Id">Bearbeiten</a>
+			</td>
+			<td>
+				<a asp-action="Delete" asp-route-Id="@item.Id">Löschen</a>
+			</td>
+		</tr>
+	}
+</table>
+
+

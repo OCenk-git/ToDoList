@@ -1,0 +1,52 @@
+﻿@model ToDo
+
+<form asp-action="Edit">
+	<input type="hidden" asp-for="Id" />
+	<table>
+		<tr>
+			<td>
+				<label asp-for="Beschreibung"></label>
+			</td>
+			<td>
+				<input asp-for="Beschreibung" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label asp-for="EndDatum"></label>
+			</td>
+			<td>
+				<input asp-for="EndDatum" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				@if(Model.Erledigt == "Offen")
+				{
+					<input type="radio" name="Erledigt" value="Offen" checked/>
+				}
+				else
+				{
+					<input type="radio" name="Erledigt" value="Offen"/>
+				}
+				<label>Offen</label>
+			</td>
+			<td>
+				@if (Model.Erledigt == "Erledigt")
+				{
+					<input type="radio" name="Erledigt" value="Erledigt" checked />
+				}
+				else
+				{
+					<input type="radio" name="Erledigt" value="Erledigt" />
+				}
+				<label>Erledigt</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Speichern" />
+			</td>
+		</tr>
+	</table>
+</form>
